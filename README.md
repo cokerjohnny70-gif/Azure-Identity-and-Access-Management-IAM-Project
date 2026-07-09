@@ -211,21 +211,3 @@ This IAM lab demonstrates how Microsoft Entra ID and Azure can be used together 
 
 This project reflects core IAM concepts used in real-world cloud environments, including **least privilege**, **role separation**, **access enforcement**, and **identity monitoring**.
 
----
-
-# 📂 Repository Structure
-
-```bash
-Azure-Identity-and-Access-Management-IAM-Project/
-│── README.md
-│── assets/
-│   ├── 01-entra-users.png
-│   ├── 02-entra-groups.png
-│   ├── 03-resource-group.png
-│   ├── 04-rbac-role-assignments.png
-│   ├── 05-rbac-contributor-assignment.png
-│   ├── 06-rbac-reader-assignment.png
-│   ├── 07-conditional-access-policy.png
-│   ├── 08-ca-policy-grant-controls.png
-│   ├── 09-authentication-methods.png
-│   └── 10-sign-in-logs.png
