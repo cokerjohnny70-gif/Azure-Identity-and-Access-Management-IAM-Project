@@ -40,8 +40,6 @@ This project demonstrates the practical implementation of **Identity and Access 
 
 # 🔍 Project Walkthrough
 
----
-
 ## 1️⃣ Create Users in Microsoft Entra ID
 
 Three test users were created in Microsoft Entra ID to simulate different roles within the environment:
@@ -78,7 +76,7 @@ Using groups instead of assigning permissions directly to individual users is a 
 **Microsoft Entra admin center → Groups → New group**
 
 ### Screenshot
-<img src="assets/02-groups.png" width="900">
+<img src="assets/02-entra-groups.png" width="900">
 
 ---
 
@@ -113,40 +111,18 @@ This structure demonstrates **least privilege**:
 ### Navigation
 **Azure Portal → Resource groups → IAM-Lab-RG → Access control (IAM)**
 
----
-
-### 4.1 Contributor Role Assignment to Azure-admins
-
-The **Azure-admins** security group was assigned the **Contributor** role at the resource group scope.
-
-### Screenshot
-<img src="assets/04-rbac-role-assignments1.png" width="900">
-
----
-
-### 4.2 Reader Role Assignment to Developers
-
-The **Developers** security group was assigned the **Reader** role at the resource group scope.
-
-### Screenshot
-<img src="assets/05-rbac-role-assignments2.png" width="900">
-
----
-
-### 4.3 RBAC Assignment Review
-
-The final IAM view shows the completed role assignments for the resource group, including the **Contributor** and **Reader** assignments.
-
-### Screenshots
-<img src="assets/06-rbac-role-assignments3.png" width="900">
+### RBAC Screenshots
+<img src="assets/04-rbac-role-assignments.png" width="900">
 <br><br>
-<img src="assets/07-rbac-role-assignments-final.png" width="900">
+<img src="assets/05-rbac-contributor-assignment.png" width="900">
+<br><br>
+<img src="assets/06-rbac-reader-assignment.png" width="900">
 
 ---
 
 ## 5️⃣ Configure Conditional Access Policy
 
-A **Conditional Access** policy was created in Microsoft Entra ID to require **Multi-Factor Authentication (MFA)** for selected users/groups. Conditional Access helps strengthen identity security by applying access controls at sign-in based on organizational policy.
+A **Conditional Access** policy was created in Microsoft Entra ID to require **Multi-Factor Authentication (MFA)** for selected users and groups. Conditional Access strengthens identity security by applying access controls at sign-in based on organizational policy.
 
 ### Policy Goal
 Require MFA when targeted users access cloud resources.
@@ -158,7 +134,7 @@ Require MFA when targeted users access cloud resources.
 **Microsoft Entra admin center → Conditional Access → New policy**
 
 ### Screenshot
-<img src="assets/08-conditional-access-policy.png" width="900">
+<img src="assets/07-conditional-access-policy.png" width="900">
 
 ---
 
@@ -175,7 +151,7 @@ This ensures that targeted users must complete an MFA challenge before being all
 **Conditional Access Policy → Access controls → Grant**
 
 ### Screenshot
-<img src="assets/09-ca-policy-settings.png" width="900">
+<img src="assets/08-ca-policy-grant-controls.png" width="900">
 
 ---
 
@@ -197,7 +173,7 @@ This section supports the MFA portion of the project by showing the authenticati
 **Microsoft Entra admin center → Authentication methods → Policies**
 
 ### Screenshot
-<img src="assets/10-authentication-methods.png" width="900">
+<img src="assets/09-authentication-methods.png" width="900">
 
 ---
 
@@ -217,7 +193,7 @@ The sign-in logs provide visibility into:
 **Microsoft Entra admin center → Monitoring & health → Sign-in logs**
 
 ### Screenshot
-<img src="assets/11-sign-in-logs.png" width="900">
+<img src="assets/10-sign-in-logs.png" width="900">
 
 ---
 
@@ -225,9 +201,9 @@ The sign-in logs provide visibility into:
 
 This IAM lab demonstrates how Microsoft Entra ID and Azure can be used together to strengthen identity security through structured access management and modern authentication controls.
 
-### Key outcomes of the project:
-- Created **test users** and **security groups** in Microsoft Entra ID
-- Created an Azure **resource group** to scope permissions
+ Key outcomes of the project:
+- Created test users and security groups in Microsoft Entra ID
+- Created an Azure resource group to scope permissions
 - Implemented **RBAC** using Contributor and Reader roles
 - Created a **Conditional Access** policy to require MFA
 - Reviewed **Authentication Methods** available for MFA
@@ -240,17 +216,16 @@ This project reflects core IAM concepts used in real-world cloud environments, i
 # 📂 Repository Structure
 
 ```bash
-Azure-IAM-Project/
+Azure-Identity-and-Access-Management-IAM-Project/
 │── README.md
 │── assets/
 │   ├── 01-entra-users.png
-│   ├── 02-groups.png
+│   ├── 02-entra-groups.png
 │   ├── 03-resource-group.png
-│   ├── 04-rbac-role-assignments1.png
-│   ├── 05-rbac-role-assignments2.png
-│   ├── 06-rbac-role-assignments3.png
-│   ├── 07-rbac-role-assignments-final.png
-│   ├── 08-conditional-access-policy.png
-│   ├── 09-ca-policy-settings.png
-│   ├── 10-authentication-methods.png
-│   └── 11-sign-in-logs.png
+│   ├── 04-rbac-role-assignments.png
+│   ├── 05-rbac-contributor-assignment.png
+│   ├── 06-rbac-reader-assignment.png
+│   ├── 07-conditional-access-policy.png
+│   ├── 08-ca-policy-grant-controls.png
+│   ├── 09-authentication-methods.png
+│   └── 10-sign-in-logs.png
